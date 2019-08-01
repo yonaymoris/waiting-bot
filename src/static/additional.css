@@ -1,0 +1,32 @@
+body {
+	font-family: courier-std, monospace;
+	font-size: 12px;
+}
+
+.content {
+	height: 700px;
+	margin-top: 50px;
+}
+
+.input input {
+	height: 40px;
+	font-size: 16px;
+	padding-left: 20px;
+	border: 0;
+	border-top: 1px solid #e8e8e8;
+	/*background: #fff5f5;*/
+	font-family: courier-std, monospace;
+	font-size: 12px;
+}
+
+.input input:focus {
+	outline: none;
+}
+
+.message {
+	color: #3b7094;
+}
+
+.current-user {
+	color: #db8181;
+}

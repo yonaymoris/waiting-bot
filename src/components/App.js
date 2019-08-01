@@ -2,8 +2,8 @@ import React, { useState, useReducer, useRef, useLayoutEffect } from 'react';
 import Bot from 'bot';
 
 const userName = 'You';
-const botName = 'yona';
-const botMessageDelay = 2000;
+const botName = 'matsu';
+const botMessageDelay = 6000;
 
 function messagesReducer(state, action) {
     if (action.content) {
@@ -66,13 +66,12 @@ function App() {
                         {messages.map((msg, i) => <div key={i}
                             className={'message' + ((msg.author === userName) ? ' current-user' : '')}
                         >
-                            <span>{msg.content}</span>
+                            <span>{msg.author}: {msg.content}</span>
                         </div>)}
                     </div>
 
                     <form className='input' onSubmit={onSubmit}>
-                        <input type="text" value={text} onChange={onChange} />
-                        <input type="submit" value="Send" />
+                        <input placeholder="Say something to matsu..." type="text" value={text} onChange={onChange} autofocus="true"/>
                     </form>
 
                 </div>

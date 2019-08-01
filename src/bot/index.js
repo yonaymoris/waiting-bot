@@ -14,7 +14,7 @@ class Bot {
      * @param {*} callback - The function to execute when the timer completes.
      * @param {number} delay - 
      */
-    startTimer(callback, delay = 2000) {
+    startTimer(callback, delay = 6000) {
         clearTimeout(this.timer);
 
         const id = setInterval(callback, delay);
