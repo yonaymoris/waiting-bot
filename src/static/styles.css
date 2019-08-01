@@ -1,0 +1,84 @@
+@import-normalize;
+
+:root {
+    --messageBorderRadius: 1em;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Some elements must have their font explicitly defined */
+html, body, button, input, textarea, textfield, select {
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr minmax(0px, 1024px) 1fr;
+    grid-template-rows: 100vh;
+    grid-template-areas: 
+        ". content .";
+}
+
+.content {
+    grid-area: content;
+    padding: 1em;
+}
+
+.chat {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.chat > .log {
+    border: 1px solid black;
+    padding: 1em;
+    overflow-y: scroll;
+}
+
+.chat > .log > .start-message {
+    text-align: center;
+    opacity: 0.5;
+    padding: 1em;
+}
+
+.chat > .log > .message {
+    margin: 0.2em;
+    display: flex;
+}
+
+.chat > .log > .message.current-user {
+    flex-direction: row-reverse;
+}
+
+.chat > .log > .message > span {
+    padding: 0.7em 1em;
+    border-radius: var(--messageBorderRadius);
+    border-bottom-left-radius: 0;
+    background-color: lightpink;
+}
+
+.chat > .log > .message.current-user > span {
+    border-radius: var(--messageBorderRadius);
+    border-bottom-right-radius: 0;
+    background-color: lightblue;
+}
+
+.chat > .input {
+    display: grid;
+    grid-template-columns: 9fr auto;
+    padding: 1em 0;
+}
+
+.chat > .input input[type="text"] {
+    
+}
+
+.chat > .input input[type="button"] {
+    
+}
