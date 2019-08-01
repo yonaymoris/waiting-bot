@@ -17,7 +17,7 @@ html, body, button, input, textarea, textfield, select {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr minmax(0px, 1024px) 1fr;
+    grid-template-columns: 1fr minmax(0px, 720px) 1fr;
     grid-template-rows: 100vh;
     grid-template-areas: 
         ". content .";
@@ -36,7 +36,7 @@ html, body, button, input, textarea, textfield, select {
 }
 
 .chat > .log {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding: 1em;
     overflow-y: scroll;
 }
@@ -58,15 +58,15 @@ html, body, button, input, textarea, textfield, select {
 
 .chat > .log > .message > span {
     padding: 0.7em 1em;
-    border-radius: var(--messageBorderRadius);
+    /*border-radius: var(--messageBorderRadius);*/
     border-bottom-left-radius: 0;
-    background-color: lightpink;
+    /*background-color: lightpink;*/
 }
 
 .chat > .log > .message.current-user > span {
-    border-radius: var(--messageBorderRadius);
+    /*border-radius: var(--messageBorderRadius);*/
     border-bottom-right-radius: 0;
-    background-color: lightblue;
+    /*background-color: lightblue;*/
 }
 
 .chat > .input {
