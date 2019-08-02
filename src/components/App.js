@@ -1,9 +1,17 @@
-import React, { useState, useReducer, useRef, useLayoutEffect } from 'react';
+import React, { useState, useReducer, useRef, useEffect, useLayoutEffect } from 'react';
 import Bot from 'bot';
 
+// CONFIGURE OPTIONS HERE
 const userName = 'You';
-const botName = 'matsu';
-const botMessageDelay = 6000;
+const botConfig = {
+    name: 'matsu',
+    delays: {
+        greeting: 5000,
+        good: 1000,
+        bad: 10000
+    },
+    maxBadMessages: 5
+};
 
 function messagesReducer(state, action) {
     if (action.content) {
@@ -19,10 +27,21 @@ function messagesReducer(state, action) {
 }
 
 function App() {
+    // Callback that gets executed whenever bot has a message to send
+    function onBotMessage(message) {
+        addMessage({
+            author: chatBot.name,
+            content: message
+        });
+    }
+
+    const chatBot = useState(new Bot({
+        ...botConfig,
+        callback: onBotMessage
+    }))[0];
+    const chatLog = useRef(null);
     const [messages, addMessage] = useReducer(messagesReducer, []);
     const [text, setText] = useState('');
-    const chatBot = useState(new Bot(botName))[0];
-    const chatLog = useRef(null);
 
     function onSubmit(e) {
         e.preventDefault();
@@ -30,23 +49,15 @@ function App() {
             author: userName,
             content: text
         });
+        chatBot.receive(text);
         setText('');
-
-        // Reset bot's message timer
-        chatBot.useBadMessage = false;
-        chatBot.startTimer(() => {
-            const msg = chatBot.getMessage();
-            addMessage({
-                author: chatBot.name,
-                content: msg
-            });
-            chatBot.useBadMessage = true; // Ensure subsequent messages are 'bad'
-        }, botMessageDelay);
     }
 
-    function onChange(e) {
-        setText(e.target.value);
-    }
+    // Start the bot on component mount and stop on unmount
+    useEffect(() => {
+        chatBot.start();
+        return () => chatBot.stop();
+    }, [chatBot]);
 
     // Scroll to bottom whenever a new message is added
     useLayoutEffect(() => {
@@ -60,7 +71,7 @@ function App() {
 
                     <div className='log' ref={chatLog}>
                         <p className='start-message'>
-                            This is the start of your conversation with {botName}.
+                            This is the start of your conversation with {botConfig.name}.
                         </p>
 
                         {messages.map((msg, i) => <div key={i}
@@ -71,7 +82,13 @@ function App() {
                     </div>
 
                     <form className='input' onSubmit={onSubmit}>
-                        <input placeholder="Say something to matsu..." type="text" value={text} onChange={onChange} autofocus="true"/>
+                        <input
+                            placeholder={`Say something to ${botConfig.name}...`}
+                            type='text'
+                            value={text}
+                            onChange={(e) => setText(e.target.value)}
+                            autoFocus
+                        />
                     </form>
 
                 </div>

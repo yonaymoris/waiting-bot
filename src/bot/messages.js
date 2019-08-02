@@ -1,4 +1,9 @@
 export default {
+    greeting: [
+        'Hi!',
+        'Hello!',
+        'Hi! How are you?'
+    ],
     good: [
         'That\'s so funny!',
         'Oh, I see.',
@@ -16,5 +21,10 @@ export default {
         'I want to know you more...',
         'You\'ve been online recently but haven\'t said anything. Are we still cool?',
         'Am I thinking of you too much?'
+    ],
+    badFinal: [
+        'Fine!',
+        'Whatever...',
+        'I\'ll just go talk to someone that won\'t ignore me.'
     ]
 };
