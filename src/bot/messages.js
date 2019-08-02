@@ -51,5 +51,12 @@ export default {
         'We should\'t have talked.',
         'Whatever...',
         'I\'ll just go talk to someone that won\'t ignore me.'
+    ],
+    questionReply: [
+        'Nice question.',
+        'Oh, I was not ready for such a question.',
+        'I will reply to this question later.',
+        'Oh damn, you asked it! Haha!',
+        'Let\'s leave this question for later.'
     ]
 };

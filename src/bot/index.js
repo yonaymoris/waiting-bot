@@ -57,12 +57,14 @@ class Bot {
 
     /**
      * Set a timer for a random 'good' message.
+     * @param {*} isQuestion - 
      */
-    _queueGoodMessage() {
+    _queueGoodMessage(isQuestion = false) {
         clearTimeout(this._timer);
         this._timer = setInterval(() => {
-            const random = getRandomIndexInArray(messages.good);
-            this._callback(messages.good[random]);
+            const replies = (isQuestion) ? messages.questionReply : messages.good;
+            const random = getRandomIndexInArray(replies);
+            this._callback(replies[random]);
             this._queueBadMessage();
         }, this._delays.good);
     }
@@ -129,7 +131,12 @@ class Bot {
         if (message) {
             this._badMessagesCount = 0;
             this._availableBadMessages = [];
-            this._queueGoodMessage();
+
+            if (message.endsWith('?')) {
+                this._queueGoodMessage(true);
+            } else {
+                this._queueGoodMessage();
+            }
         }
     }
 }
