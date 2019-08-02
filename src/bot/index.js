@@ -116,6 +116,7 @@ class Bot {
      */
     stop() {
         clearTimeout(this._timer);
+        this._isActive = false;
     }
 
     /**
