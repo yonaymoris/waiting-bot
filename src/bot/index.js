@@ -104,7 +104,7 @@ class Bot {
      * the bot, use stop() first and then start().
      */
     start() {
-        if (this._isActive) {
+        if (!this._isActive) {
             this._init();
             this._isActive = true;
             this._queueGreetingMessage();
