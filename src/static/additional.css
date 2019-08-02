@@ -3,13 +3,9 @@ body {
 	font-size: 12px;
 }
 
-.start-message {
-	margin-bottom: 50px;
-}
-
 .content {
-	height: 600px;
-	margin-top: 80px;
+	height: 700px;
+	margin-top: 50px;
 }
 
 .input input {
