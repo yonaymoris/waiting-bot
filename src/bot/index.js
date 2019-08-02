@@ -39,8 +39,8 @@ class Bot {
         clearInterval(this._timer);
         this._isActive = false;
         this._badMessagesCount = 0;
-        this._prevMessage = '';
         this._timer = null;
+        this._availableBadMessages = [];
     }
 
     /**
@@ -72,6 +72,8 @@ class Bot {
      */
     _queueBadMessage() {
         clearTimeout(this._timer);
+        this._availableBadMessages = this._availableBadMessages.concat(messages.bad);
+
         this._timer = setInterval(() => {
             this._badMessagesCount++;
 
@@ -84,15 +86,14 @@ class Bot {
                 return;
             }
 
-            // Prevent bot from using the same 'bad' message twice
-            let random = getRandomIndexInArray(messages.bad);
-            let msg = messages.bad[random];
-            while (msg === this._prevMessage) {
-                random = getRandomIndexInArray(messages.bad);
-                msg = messages.bad[random];
-            }
+            // Prevent bot from using the same 'bad' message in a 'session'.
+            // Does not handle _maxBadMessages being larger than the length
+            // of the bad messages array.
+            const badMessages = this._availableBadMessages;
+            const random = getRandomIndexInArray(badMessages);
+            const msg = badMessages[random];
+            badMessages.splice(random, 1);
 
-            this._prevMessage = msg;
             this._callback(msg);
 
         }, this._delays.bad);
@@ -127,6 +128,7 @@ class Bot {
     receive(message) {
         if (message) {
             this._badMessagesCount = 0;
+            this._availableBadMessages = [];
             this._queueGoodMessage();
         }
     }
