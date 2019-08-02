@@ -48,7 +48,7 @@ export default {
         'Fine.',
         'I am sorry.',
         'I guess I have done something horrible.',
-        'We should\'t have talked.',
+        'We should not have talked.',
         'Whatever...',
         'I\'ll just go talk to someone that won\'t ignore me.'
     ]
