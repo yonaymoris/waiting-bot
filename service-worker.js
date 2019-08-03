@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/when-you-dont-reply/precache-manifest.9a353c2dabb4a1ae8d380306aca33ec7.js"
+  "/when-you-dont-reply/precache-manifest.78a38ab9e89fbd39c951951cc15dc106.js"
 );
 
 self.addEventListener('message', (event) => {
