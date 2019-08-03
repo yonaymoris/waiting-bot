@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/waiting-bot/static/css/main.a8d1759f.chunk.css",
+    "main.css": "/waiting-bot/static/css/main.5e78785e.chunk.css",
     "main.js": "/waiting-bot/static/js/main.1a5eb48d.chunk.js",
     "main.js.map": "/waiting-bot/static/js/main.1a5eb48d.chunk.js.map",
     "runtime~main.js": "/waiting-bot/static/js/runtime~main.633c71a7.js",
@@ -8,8 +8,8 @@
     "static/js/2.7bbc61d6.chunk.js": "/waiting-bot/static/js/2.7bbc61d6.chunk.js",
     "static/js/2.7bbc61d6.chunk.js.map": "/waiting-bot/static/js/2.7bbc61d6.chunk.js.map",
     "index.html": "/waiting-bot/index.html",
-    "precache-manifest.ee92bc4f2a8ba0901912885e33f649e7.js": "/waiting-bot/precache-manifest.ee92bc4f2a8ba0901912885e33f649e7.js",
+    "precache-manifest.9abe27bcaadf2f08854b2f9f00e3806b.js": "/waiting-bot/precache-manifest.9abe27bcaadf2f08854b2f9f00e3806b.js",
     "service-worker.js": "/waiting-bot/service-worker.js",
-    "static/css/main.a8d1759f.chunk.css.map": "/waiting-bot/static/css/main.a8d1759f.chunk.css.map"
+    "static/css/main.5e78785e.chunk.css.map": "/waiting-bot/static/css/main.5e78785e.chunk.css.map"
   }
 }
