@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/waiting-bot/static/css/main.5e78785e.chunk.css",
-    "main.js": "/waiting-bot/static/js/main.1a5eb48d.chunk.js",
-    "main.js.map": "/waiting-bot/static/js/main.1a5eb48d.chunk.js.map",
-    "runtime~main.js": "/waiting-bot/static/js/runtime~main.633c71a7.js",
-    "runtime~main.js.map": "/waiting-bot/static/js/runtime~main.633c71a7.js.map",
-    "static/js/2.7bbc61d6.chunk.js": "/waiting-bot/static/js/2.7bbc61d6.chunk.js",
-    "static/js/2.7bbc61d6.chunk.js.map": "/waiting-bot/static/js/2.7bbc61d6.chunk.js.map",
-    "index.html": "/waiting-bot/index.html",
-    "precache-manifest.9abe27bcaadf2f08854b2f9f00e3806b.js": "/waiting-bot/precache-manifest.9abe27bcaadf2f08854b2f9f00e3806b.js",
-    "service-worker.js": "/waiting-bot/service-worker.js",
-    "static/css/main.5e78785e.chunk.css.map": "/waiting-bot/static/css/main.5e78785e.chunk.css.map"
+    "main.css": "/when-you-dont-reply/static/css/main.5e78785e.chunk.css",
+    "main.js": "/when-you-dont-reply/static/js/main.1a5eb48d.chunk.js",
+    "main.js.map": "/when-you-dont-reply/static/js/main.1a5eb48d.chunk.js.map",
+    "runtime~main.js": "/when-you-dont-reply/static/js/runtime~main.529bdf55.js",
+    "runtime~main.js.map": "/when-you-dont-reply/static/js/runtime~main.529bdf55.js.map",
+    "static/js/2.7bbc61d6.chunk.js": "/when-you-dont-reply/static/js/2.7bbc61d6.chunk.js",
+    "static/js/2.7bbc61d6.chunk.js.map": "/when-you-dont-reply/static/js/2.7bbc61d6.chunk.js.map",
+    "index.html": "/when-you-dont-reply/index.html",
+    "precache-manifest.9a353c2dabb4a1ae8d380306aca33ec7.js": "/when-you-dont-reply/precache-manifest.9a353c2dabb4a1ae8d380306aca33ec7.js",
+    "service-worker.js": "/when-you-dont-reply/service-worker.js",
+    "static/css/main.5e78785e.chunk.css.map": "/when-you-dont-reply/static/css/main.5e78785e.chunk.css.map"
   }
 }
